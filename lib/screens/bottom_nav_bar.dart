@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:telkomsel/screens/home_page.dart';
 import 'package:telkomsel/theme.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -11,9 +12,30 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
+
+  final _screens = [
+    HomePage(),
+    const Scaffold(body: Center(child: Text('Poin'))),
+    const Scaffold(body: Center(child: Text('Shop'))),
+    const Scaffold(body: Center(child: Text('Explore'))),
+    const Scaffold(body: Center(child: Text('Menu'))),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Stack(
+        children: _screens
+            .asMap()
+            .map(
+              (i, screen) => MapEntry(
+                i,
+                Offstage(offstage: _selectedIndex != i, child: screen),
+              ),
+            )
+            .values
+            .toList(),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
