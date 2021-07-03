@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:telkomsel/screens/home_page.dart';
 import 'package:telkomsel/theme.dart';
 
@@ -48,8 +47,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
             icon: Container(
               margin: EdgeInsets.symmetric(vertical: 5),
-              child: SvgPicture.asset(
-                'assets/icons/Icon-home.svg',
+              child: Image.asset(
+                'assets/icons/Icon-home.png',
+                width: 21,
                 color: _selectedIndex == 0 ? redColor : greyColor,
               ),
             ),
@@ -58,8 +58,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
             icon: Container(
               margin: EdgeInsets.symmetric(vertical: 5),
-              child: SvgPicture.asset(
-                'assets/icons/trophy.svg',
+              child: Image.asset(
+                'assets/icons/trophy.png',
                 width: 21,
                 color: _selectedIndex == 1 ? redColor : greyColor,
               ),
@@ -69,8 +69,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
               icon: Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: SvgPicture.asset(
-                  'assets/icons/shopping-cart.svg',
+                child: Image.asset(
+                  'assets/icons/shopping-cart.png',
                   width: 21,
                   color: _selectedIndex == 2 ? redColor : greyColor,
                 ),
@@ -79,8 +79,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
               icon: Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: SvgPicture.asset(
-                  'assets/icons/shuttle.svg',
+                child: Image.asset(
+                  'assets/icons/shuttle.png',
                   width: 21,
                   color: _selectedIndex == 3 ? redColor : greyColor,
                 ),
@@ -89,8 +89,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
               icon: Container(
                 margin: EdgeInsets.symmetric(vertical: 5),
-                child: SvgPicture.asset(
-                  'assets/icons/menu.svg',
+                child: Image.asset(
+                  'assets/icons/menu.png',
                   width: 21,
                   color: _selectedIndex == 4 ? redColor : greyColor,
                 ),
