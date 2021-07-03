@@ -79,7 +79,14 @@ class CardInfoHome extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    children: [],
+                    children: [
+                      CircularProgressIndicator(
+                        value: 0.9,
+                        strokeWidth: 6,
+                        color: orangeColor,
+                        backgroundColor: greyCardColor,
+                      )
+                    ],
                   ),
                 ],
               ),

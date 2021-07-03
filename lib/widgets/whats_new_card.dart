@@ -4,33 +4,52 @@ import 'package:telkomsel/theme.dart';
 class WhatsNewCard extends StatelessWidget {
   const WhatsNewCard({
     Key? key,
+    required this.image,
+    required this.text,
+    required this.title,
   }) : super(key: key);
 
+  final String image;
+  final String text;
+  final String title;
   @override
   Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.only(top: 20, bottom: 28),
-        height: 163,
-        width: 281,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(14),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 14),
+        Image.asset(
+          image,
+          height: 164,
+          width: 281,
+          fit: BoxFit.cover,
+        ),
+        SizedBox(height: 10),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          decoration: BoxDecoration(
+            color: pinkColor,
+            borderRadius: BorderRadius.all(
+              Radius.circular(19),
+            ),
+          ),
+          child: Text(
+            text,
+            style: regularText10.copyWith(color: blackColor),
           ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 11, right: 9),
-          child: Column(
-            children: [
-              SizedBox(height: 20),
-              Text(
-                'Paket Internet Puas Nonton\nVideo Berlangganan',
-                style: boldText14.copyWith(color: whiteColor),
-                textAlign: TextAlign.center,
-              ),
-              Image.asset('assets/images/video-subscription.png'),
-            ],
+        SizedBox(
+          height: 10,
+        ),
+        Text(title, style: boldText14),
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 35),
+          child: Text(
+            'See all',
+            style: regularText14,
           ),
-        ));
+        ),
+      ],
+    );
   }
 }

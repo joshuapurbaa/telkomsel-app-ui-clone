@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:telkomsel/screens/home_page.dart';
 import 'package:telkomsel/theme.dart';
 
 class RecomendedCard extends StatelessWidget {
   const RecomendedCard({
     Key? key,
+    required this.title,
+    required this.time,
+    required this.price,
   }) : super(key: key);
+
+  final String title;
+  final String time;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +37,7 @@ class RecomendedCard extends StatelessWidget {
           ClipPath(
             clipper: BackgroundClipper(),
             child: Container(
+              padding: EdgeInsets.only(left: 11, top: 2),
               height: 20,
               width: 96,
               decoration: BoxDecoration(
@@ -38,6 +45,10 @@ class RecomendedCard extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(14),
                 ),
+              ),
+              child: Text(
+                'Buy it again',
+                style: mediumText9,
               ),
             ),
           ),
@@ -48,18 +59,17 @@ class RecomendedCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Kuota Ketengan Unli...',
+                  title,
                   style: mediumText12.copyWith(letterSpacing: 0.3),
                 ),
                 SizedBox(
                   height: 8,
                 ),
-                Text('29 Jun 2021 13:08:07',
-                    style: mediumText15.copyWith(letterSpacing: 0.2)),
+                Text(time, style: mediumText15.copyWith(letterSpacing: 0.2)),
                 SizedBox(
                   height: 15,
                 ),
-                Text('Rp 4,200',
+                Text(price,
                     style: boldText14.copyWith(
                         letterSpacing: 0.2, color: redColor)),
               ],
@@ -73,5 +83,26 @@ class RecomendedCard extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class BackgroundClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+
+    path.lineTo(0, size.height);
+    path.lineTo(size.width - 20, size.height);
+    path.quadraticBezierTo(size.width - 10, size.height, size.width, 0);
+
+    path.lineTo(size.width, 0);
+    path.close();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return true;
   }
 }

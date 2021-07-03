@@ -5,12 +5,15 @@ const Color redColor = Color(0xFFDF181D);
 const Color greyColor = Color(0xFFB4B8BB);
 const Color greyCardColor = Color(0xFFF5F4F2);
 const Color yellowColor = Color(0xFFEDD501);
+const Color orangeColor = Color(0xFFFAA424);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color darkRedColor = Color(0xFFBA0024);
 const Color primaryTextColor = Color(0xFF011C40);
 const Color redButtonColor = Color(0xFFF00027);
 const Color blueColor = Color(0xFF124888);
 const Color bluePurpleColor = Color(0xFF1D13E5);
+const Color pinkColor = Color(0xFFFEE5E7);
+const Color blackColor = Color(0xFF000000);
 
 double defaultMargin = 16.0;
 
@@ -25,12 +28,15 @@ TextStyle whiteBoldText13 =
 TextStyle regularText10 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 10, fontWeight: regular);
 TextStyle regularText12 =
-    GoogleFonts.poppins(color: blueColor, fontSize: 12, fontWeight: regular);
+    GoogleFonts.poppins(color: blueColor, fontSize: 12, fontWeight: medium);
 TextStyle regularText13 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 13, fontWeight: regular);
 TextStyle regularText14 =
-    GoogleFonts.poppins(color: blueColor, fontSize: 14, fontWeight: regular);
+    GoogleFonts.poppins(color: blueColor, fontSize: 14, fontWeight: medium);
+
 // MEDIUM TEXT
+TextStyle mediumText9 =
+    GoogleFonts.poppins(color: whiteColor, fontSize: 9, fontWeight: medium);
 TextStyle mediumText12 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 12, fontWeight: medium);
 TextStyle mediumText15 = GoogleFonts.poppins(

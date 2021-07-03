@@ -167,30 +167,67 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
-    Widget contentRecommended() {
+    Widget content() {
       return Container(
         margin: EdgeInsets.only(top: 20),
-        padding: EdgeInsets.only(left: 17, top: 45, right: 17),
         decoration: BoxDecoration(
             color: whiteColor,
             borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Text('Recomended for you', style: nunitoExtraBoldText18),
-                Spacer(),
-                Text('See all', style: regularText12),
-              ],
+            Container(
+              margin: EdgeInsets.only(left: 17, top: 45, right: 17),
+              child: Row(
+                children: [
+                  Text('Recomended for you', style: nunitoExtraBoldText18),
+                  Spacer(),
+                  Text('See all', style: regularText12),
+                ],
+              ),
             ),
-            RecomendedCard(),
-            Row(
-              children: [
-                Text('What\'s new ?', style: nunitoExtraBoldText18),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: 17),
+              child: Row(
+                children: [
+                  RecomendedCard(
+                    title: 'Kuota Ketengan Unli...',
+                    time: '29 Jun 2021 13:08:07',
+                    price: 'Rp 4,200',
+                  ),
+                  SizedBox(width: 15),
+                  RecomendedCard(
+                    title: 'Ketengan Kuota Bela...',
+                    time: '29 Jun 2021 13:05:07',
+                    price: 'Rp 5,500',
+                  ),
+                ],
+              ),
             ),
-            WhatsNewCard(),
+            Padding(
+              padding: const EdgeInsets.only(left: 17),
+              child: Text('What\'s new ?', style: nunitoExtraBoldText18),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: 17),
+              child: Row(
+                children: [
+                  WhatsNewCard(
+                    image: 'assets/images/video-subscription.png',
+                    text: 'Package',
+                    title: 'Video Digital Subscription',
+                  ),
+                  SizedBox(width: 15),
+                  WhatsNewCard(
+                    image: 'assets/images/poin-image.png',
+                    text: 'POIN',
+                    title: 'Undi-undi Hepi',
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       );
@@ -210,27 +247,10 @@ class _HomePageState extends State<HomePage> {
           children: [
             header(),
             cardInfo(),
-            contentRecommended(),
+            content(),
           ],
         ),
       ),
     );
-  }
-}
-
-class BackgroundClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-
-    path.lineTo(0, size.width);
-    path.lineTo(size.width, size.height);
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return true;
   }
 }
