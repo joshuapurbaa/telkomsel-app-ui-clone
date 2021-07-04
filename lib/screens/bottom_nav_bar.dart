@@ -49,7 +49,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               margin: EdgeInsets.symmetric(vertical: 5),
               child: Image.asset(
                 'assets/icons/Icon-home.png',
-                width: 21,
+                width: 18,
                 color: _selectedIndex == 0 ? redColor : greyColor,
               ),
             ),
@@ -60,7 +60,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               margin: EdgeInsets.symmetric(vertical: 5),
               child: Image.asset(
                 'assets/icons/trophy.png',
-                width: 21,
+                width: 18,
                 color: _selectedIndex == 1 ? redColor : greyColor,
               ),
             ),
@@ -71,7 +71,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 margin: EdgeInsets.symmetric(vertical: 5),
                 child: Image.asset(
                   'assets/icons/shopping-cart.png',
-                  width: 21,
+                  width: 18,
                   color: _selectedIndex == 2 ? redColor : greyColor,
                 ),
               ),
@@ -81,7 +81,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 margin: EdgeInsets.symmetric(vertical: 5),
                 child: Image.asset(
                   'assets/icons/shuttle.png',
-                  width: 21,
+                  width: 18,
                   color: _selectedIndex == 3 ? redColor : greyColor,
                 ),
               ),
@@ -91,7 +91,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 margin: EdgeInsets.symmetric(vertical: 5),
                 child: Image.asset(
                   'assets/icons/menu.png',
-                  width: 21,
+                  width: 18,
                   color: _selectedIndex == 4 ? redColor : greyColor,
                 ),
               ),

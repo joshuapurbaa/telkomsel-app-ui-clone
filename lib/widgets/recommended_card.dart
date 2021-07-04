@@ -16,7 +16,7 @@ class RecomendedCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20, bottom: 28),
+      margin: EdgeInsets.only(top: 15, bottom: 28),
       height: 131,
       width: 284,
       decoration: BoxDecoration(
@@ -38,8 +38,8 @@ class RecomendedCard extends StatelessWidget {
             clipper: BackgroundClipper(),
             child: Container(
               padding: EdgeInsets.only(left: 11, top: 2),
-              height: 20,
-              width: 96,
+              height: 18,
+              width: 90,
               decoration: BoxDecoration(
                 color: bluePurpleColor,
                 borderRadius: BorderRadius.only(
@@ -48,7 +48,7 @@ class RecomendedCard extends StatelessWidget {
               ),
               child: Text(
                 'Buy it again',
-                style: mediumText9,
+                style: mediumText9.copyWith(letterSpacing: 0.2),
               ),
             ),
           ),

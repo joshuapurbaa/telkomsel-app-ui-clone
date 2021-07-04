@@ -14,6 +14,7 @@ const Color blueColor = Color(0xFF124888);
 const Color bluePurpleColor = Color(0xFF1D13E5);
 const Color pinkColor = Color(0xFFFEE5E7);
 const Color blackColor = Color(0xFF000000);
+const Color brownColor = Color(0xFFB54618);
 
 double defaultMargin = 16.0;
 
@@ -24,11 +25,15 @@ TextStyle whiteBoldText15 =
 TextStyle whiteBoldText13 =
     GoogleFonts.poppins(color: whiteColor, fontSize: 13, fontWeight: bold);
 
+// LIGHT TEXT
+TextStyle lightText12 =
+    GoogleFonts.poppins(color: blackColor, fontSize: 12, fontWeight: light);
+
 // REGULAR TEXT
 TextStyle regularText10 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 10, fontWeight: regular);
 TextStyle regularText12 =
-    GoogleFonts.poppins(color: blueColor, fontSize: 12, fontWeight: medium);
+    GoogleFonts.poppins(color: blueColor, fontSize: 12, fontWeight: regular);
 TextStyle regularText13 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 13, fontWeight: regular);
 TextStyle regularText14 =
@@ -37,19 +42,30 @@ TextStyle regularText14 =
 // MEDIUM TEXT
 TextStyle mediumText9 =
     GoogleFonts.poppins(color: whiteColor, fontSize: 9, fontWeight: medium);
+TextStyle mediumText10 =
+    GoogleFonts.poppins(color: brownColor, fontSize: 10, fontWeight: medium);
 TextStyle mediumText12 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 12, fontWeight: medium);
+TextStyle mediumText13 = GoogleFonts.poppins(
+    color: primaryTextColor, fontSize: 13, fontWeight: medium);
 TextStyle mediumText15 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 15, fontWeight: medium);
+
+// SEMIBOLD
+TextStyle semiBoldText12 = GoogleFonts.poppins(
+    color: primaryTextColor, fontSize: 12, fontWeight: semiBold);
+
 // BOLD TEXT
+TextStyle boldText12 = GoogleFonts.poppins(
+    color: primaryTextColor, fontSize: 12, fontWeight: bold);
 TextStyle boldText13 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 13, fontWeight: bold);
 TextStyle boldText14 = GoogleFonts.poppins(
     color: primaryTextColor, fontSize: 14, fontWeight: bold);
 
 // EXTRABOLD TEXT
-TextStyle extraBoldText26 = GoogleFonts.poppins(
-    color: primaryTextColor, fontSize: 26, fontWeight: extrabold);
+TextStyle extraBoldText25 = GoogleFonts.poppins(
+    color: primaryTextColor, fontSize: 25, fontWeight: extrabold);
 
 // SECONDARY TEXT STYLE
 TextStyle nunitoExtraBoldText18 = GoogleFonts.nunito(

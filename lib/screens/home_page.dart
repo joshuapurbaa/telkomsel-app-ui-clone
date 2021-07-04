@@ -24,8 +24,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Widget headerContent(String icon, String text) {
       return Container(
-        margin: EdgeInsets.only(top: 15, right: 10),
-        padding: EdgeInsets.symmetric(vertical: 11, horizontal: 11),
+        margin: EdgeInsets.only(top: 12, right: 10),
+        padding: EdgeInsets.fromLTRB(8, 5, 2, 5),
         decoration: BoxDecoration(
           color: darkRedColor,
           borderRadius: BorderRadius.all(
@@ -45,9 +45,6 @@ class _HomePageState extends State<HomePage> {
               text,
               style: whiteBoldText13,
             ),
-            SizedBox(
-              height: 10,
-            ),
             Icon(
               Icons.chevron_right_rounded,
               color: whiteColor,
@@ -63,36 +60,28 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  'Hi Bambang',
-                  style: whiteBoldText15,
-                ),
+                Text('Hi James', style: whiteBoldText15),
                 Spacer(),
                 Icon(
                   Icons.qr_code_rounded,
                   size: 28,
                   color: whiteColor,
                 ),
-                SizedBox(
-                  width: 12,
-                ),
+                SizedBox(width: 12),
                 Image.asset(
                   'assets/icons/icon-email.png',
                   width: 32,
                 ),
-                SizedBox(
-                  width: 12,
-                ),
+                SizedBox(width: 12),
                 Image.asset(
                   'assets/icons/icon-help.png',
-                  width: 32,
+                  width: 27,
                 ),
               ],
             ),
-            SizedBox(
-              height: 3,
-            ),
+            SizedBox(height: 3),
             Row(
               children: [
                 Text(
@@ -138,8 +127,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           CarouselSlider(
               items: cards
-                  .map<Widget>((card) => SizedBox(
-                        width: 380,
+                  .map<Widget>((card) => Container(
                         child: card,
                       ))
                   .toList(),
@@ -154,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                     });
                   })),
           SizedBox(
-            height: 20,
+            height: 30,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -177,12 +165,12 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(left: 17, top: 45, right: 17),
+              margin: EdgeInsets.only(left: 17, top: 35, right: 17),
               child: Row(
                 children: [
                   Text('Recomended for you', style: nunitoExtraBoldText18),
                   Spacer(),
-                  Text('See all', style: regularText12),
+                  Text('See all', style: mediumText12),
                 ],
               ),
             ),
@@ -243,14 +231,25 @@ class _HomePageState extends State<HomePage> {
             colors: [redColor, redColor, yellowColor],
           ),
         ),
-        child: ListView(
-          children: [
-            header(),
-            cardInfo(),
-            content(),
-          ],
+        child: ScrollConfiguration(
+          behavior: MyBehaviour(),
+          child: ListView(
+            children: [
+              header(),
+              cardInfo(),
+              content(),
+            ],
+          ),
         ),
       ),
     );
+  }
+}
+
+class MyBehaviour extends ScrollBehavior {
+  @override
+  Widget buildViewportChrome(
+      BuildContext context, Widget child, AxisDirection axisDirection) {
+    return child;
   }
 }

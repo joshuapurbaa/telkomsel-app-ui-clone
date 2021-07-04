@@ -15,57 +15,71 @@ class CardInfoHome2 extends StatelessWidget {
       ),
       child: Column(
         children: [
-          listCardInfo('assets/icons/icon-phone.png', 'Voice',
+          listCardInfo(context, 'assets/icons/icon-phone.png', 'Voice', null,
               'You have no quota', 'Not yet purchased'),
           SizedBox(
             height: 37,
           ),
-          listCardInfo('assets/icons/icon-sms.png', 'SMS', 'You have no quota',
+          listCardInfo(context, 'assets/icons/icon-sms.png', 'SMS', null,
+              'You have no quota', 'Not yet purchased'),
+          SizedBox(
+            height: 37,
+          ),
+          listCardInfo(
+              context,
+              'assets/icons/icon-wallet.png',
+              'Monetary ',
+              Icons.help_outline_rounded,
+              'You have no monetary balance',
               'Not yet purchased'),
-          SizedBox(
-            height: 37,
-          ),
-          listCardInfo('assets/icons/icon-wallet.png', 'Monetary',
-              'You have no quota', 'Not yet purchased'),
         ],
       ),
     );
   }
 
-  Widget listCardInfo(String icon, String title, String subtitle, String text) {
+  Widget listCardInfo(BuildContext context, String icon, String title,
+      IconData? iconHelp, String subtitle, String text) {
     return Row(
       children: [
-        Image.asset(
-          icon,
-          width: 36,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 11),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: boldText13,
-              ),
-              SizedBox(
-                height: 4,
-              ),
-              Text(
-                subtitle,
-                style: regularText10,
-              ),
-            ],
+        Expanded(
+          flex: 1,
+          child: Image.asset(
+            icon,
+            width: 30,
           ),
         ),
-        Spacer(),
-        Text(
-          text,
-          style: regularText13,
-        ),
-        Icon(
-          Icons.chevron_right,
-          color: primaryTextColor,
+        Expanded(
+          flex: 7,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 11),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      title,
+                      style: boldText12,
+                    ),
+                    Icon(iconHelp, size: 15, color: primaryTextColor),
+                    Spacer(),
+                    Text(
+                      text,
+                      style: mediumText12,
+                    ),
+                    Icon(
+                      Icons.chevron_right,
+                      color: primaryTextColor,
+                    ),
+                  ],
+                ),
+                Text(
+                  subtitle,
+                  style: mediumText10.copyWith(color: primaryTextColor),
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );
