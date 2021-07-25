@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:telkomsel/theme.dart';
-import 'package:telkomsel/widgets/card_info_home_1.dart';
-import 'package:telkomsel/widgets/card_info_home_2.dart';
-import 'package:telkomsel/widgets/recommended_card.dart';
-import 'package:telkomsel/widgets/whats_new_card.dart';
+import 'package:telkomsel/screens/home/components/card_info_home_1.dart';
+import 'package:telkomsel/screens/home/components/card_info_home_2.dart';
+import 'package:telkomsel/screens/home/components/recommended_card.dart';
+import 'package:telkomsel/screens/home/components/whats_new_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               text,
-              style: whiteBoldText13,
+              style: boldText13.copyWith(color: whiteColor),
             ),
             Icon(
               Icons.chevron_right_rounded,
@@ -62,7 +62,10 @@ class _HomePageState extends State<HomePage> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text('Hi James', style: whiteBoldText15),
+                Text(
+                  'Hi James',
+                  style: boldText15.copyWith(color: whiteColor),
+                ),
                 Spacer(),
                 Icon(
                   Icons.qr_code_rounded,
@@ -86,7 +89,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   '082212345678',
-                  style: whiteBoldText15,
+                  style: boldText15.copyWith(color: whiteColor),
                 ),
                 SizedBox(
                   width: 7,
@@ -155,6 +158,76 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
+    Widget recomendedForYou() {
+      return Column(
+        children: [
+          Container(
+            margin: EdgeInsets.only(left: 17, top: 35, right: 17),
+            child: Row(
+              children: [
+                Text('Recomended for you', style: nunitoExtraBoldText18),
+                Spacer(),
+                Text(
+                  'See all',
+                  style: mediumText12.copyWith(color: blueColor),
+                ),
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.symmetric(horizontal: 17),
+            child: Row(
+              children: [
+                RecomendedCard(
+                  title: 'Kuota Ketengan Unli...',
+                  time: '29 Jun 2021 13:08:07',
+                  price: 'Rp 4,200',
+                ),
+                SizedBox(width: 15),
+                RecomendedCard(
+                  title: 'Ketengan Kuota Bela...',
+                  time: '29 Jun 2021 13:05:07',
+                  price: 'Rp 5,500',
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+    }
+
+    Widget whatsNew() {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 17),
+            child: Text('What\'s new ?', style: nunitoExtraBoldText18),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.symmetric(horizontal: 17),
+            child: Row(
+              children: [
+                WhatsNewCard(
+                  image: 'assets/images/video-subscription.png',
+                  text: 'Package',
+                  title: 'Video Digital Subscription',
+                ),
+                SizedBox(width: 15),
+                WhatsNewCard(
+                  image: 'assets/images/poin-image.png',
+                  text: 'POIN',
+                  title: 'Undi-undi Hepi',
+                ),
+              ],
+            ),
+          ),
+        ],
+      );
+    }
+
     Widget content() {
       return Container(
         margin: EdgeInsets.only(top: 20),
@@ -162,60 +235,9 @@ class _HomePageState extends State<HomePage> {
             color: whiteColor,
             borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              margin: EdgeInsets.only(left: 17, top: 35, right: 17),
-              child: Row(
-                children: [
-                  Text('Recomended for you', style: nunitoExtraBoldText18),
-                  Spacer(),
-                  Text('See all', style: mediumText12),
-                ],
-              ),
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 17),
-              child: Row(
-                children: [
-                  RecomendedCard(
-                    title: 'Kuota Ketengan Unli...',
-                    time: '29 Jun 2021 13:08:07',
-                    price: 'Rp 4,200',
-                  ),
-                  SizedBox(width: 15),
-                  RecomendedCard(
-                    title: 'Ketengan Kuota Bela...',
-                    time: '29 Jun 2021 13:05:07',
-                    price: 'Rp 5,500',
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 17),
-              child: Text('What\'s new ?', style: nunitoExtraBoldText18),
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 17),
-              child: Row(
-                children: [
-                  WhatsNewCard(
-                    image: 'assets/images/video-subscription.png',
-                    text: 'Package',
-                    title: 'Video Digital Subscription',
-                  ),
-                  SizedBox(width: 15),
-                  WhatsNewCard(
-                    image: 'assets/images/poin-image.png',
-                    text: 'POIN',
-                    title: 'Undi-undi Hepi',
-                  ),
-                ],
-              ),
-            ),
+            recomendedForYou(),
+            whatsNew(),
           ],
         ),
       );

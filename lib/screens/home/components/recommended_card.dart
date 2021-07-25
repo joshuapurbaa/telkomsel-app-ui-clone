@@ -48,7 +48,8 @@ class RecomendedCard extends StatelessWidget {
               ),
               child: Text(
                 'Buy it again',
-                style: mediumText9.copyWith(letterSpacing: 0.2),
+                style:
+                    mediumText9.copyWith(color: whiteColor, letterSpacing: 0.2),
               ),
             ),
           ),
@@ -60,12 +61,17 @@ class RecomendedCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: mediumText12.copyWith(letterSpacing: 0.3),
+                  style: mediumText12.copyWith(
+                      color: primaryTextColor, letterSpacing: 0.3),
                 ),
                 SizedBox(
                   height: 8,
                 ),
-                Text(time, style: mediumText15.copyWith(letterSpacing: 0.2)),
+                Text(
+                  time,
+                  style: mediumText15.copyWith(
+                      color: primaryTextColor, letterSpacing: 0.2),
+                ),
                 SizedBox(
                   height: 15,
                 ),

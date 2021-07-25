@@ -41,12 +41,12 @@ class WhatsNewCard extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Text(title, style: boldText14),
+        Text(title, style: boldText14.copyWith(color: primaryTextColor)),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 35),
           child: Text(
             'See all',
-            style: regularText14,
+            style: regularText14.copyWith(color: blueColor),
           ),
         ),
       ],

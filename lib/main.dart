@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       title: 'Telkomsel App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        brightness: Brightness.light,
         bottomNavigationBarTheme:
             BottomNavigationBarThemeData(selectedItemColor: redColor),
       ),
